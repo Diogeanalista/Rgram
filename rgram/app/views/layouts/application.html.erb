@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rgram</title>
+    <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <!-- Header -->
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="<%= root_path%>"><%= image_tag('256x256.png') %> Uriji Test</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tutors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uriji" href="#">Become a tutor</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- /Header -->
+
+    <!-- Main content -->
+    <div id="main-content" class="container">
+      <div class="row text-center">
+        <div class="col">
+          <ul class="nav justify-content-end" >
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'Nueva imagen', add_images_path, class: "nav-link text-uriji" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Salir', destroy_user_session_path, method: :delete, class: "nav-link text-uriji" %>
+              </li>
+            <% else %>
+              <li class="nav-item" >
+                <%= link_to 'Iniciar', new_user_session_path, class: "nav-link text-uriji" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Registrarme', new_user_registration_path, class: "nav-link text-uriji" %>
+              </li>
+            <% end %>
+          </ul>
+
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <!-- /Main content -->
+
+    <!-- Footer-->
+    <footer id="footer" class="pb-4 pt-4">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12 col-lg">
+            <a href="#">Frecuent Questions</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Contact us</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Press</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Conference</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Terms and Conditions</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Privacity</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Students</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+  </body>
+</html>

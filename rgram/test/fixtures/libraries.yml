@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seccion: MyString
+  book: one
+
+two:
+  seccion: MyString
+  book: two

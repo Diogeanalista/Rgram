@@ -1,0 +1,27 @@
+
+<% if user_signed_in?%>
+ <div class="row" align="left" id="id">
+  <div class="col_8">
+    <h1><%= current_user.name %></h1>
+    <ul class="nav">
+     <li class="margin-right">
+      <p> <strong> <%= @images.count %></strong> publicaciones</p>
+     </li>
+     <li class="margin-right">
+      <p> <strong> 500</strong> seguidores</p>
+     </li>
+     <li class="margin-right">
+      <p> <strong>46</strong> seguidos</p>
+     </li>
+    </ul>
+  </div>
+ </div>
+
+  <div class="row">
+  <%= render @images %>
+  </div>
+  <%= will_paginate @images %>
+  <% else %>
+  <h1>Uriji test</h1>
+
+<% end %>

@@ -1,0 +1,15 @@
+
+
+<div class="col">
+		<figure class="figure">
+			 <%= image_tag image.picture.medium.url, class: 'figure-img img-fluid rounded'%>
+			 <figcaption class="figure-caption">
+			 <a id="a"><%= image.description %></a>
+			 <div id ="diva"><a><%= link_to t('.edit_link'), edit_image_path(image)%></a></div>
+			 <div id ="diva"><a><%= link_to t('.remove_link'), image, method: :delete, data: { confirm: 'seguro'} %></a></div>
+			</figcaption>
+
+		</figure>
+
+</div>
+

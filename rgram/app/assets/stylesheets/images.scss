@@ -1,0 +1,17 @@
+// Place all the styles related to the Images controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+figure > img {
+    width: 8em;
+    height: auto;
+    max-width: 8em !important;
+}
+
+#diva a {
+    color: #a9e2f3;
+}
+
+#a {
+    color: white;
+}
